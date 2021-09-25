@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Slide } from '../components/Slide'
+import { Slide } from './Slide'
 
 export const Trending = () => {
 
@@ -9,8 +9,8 @@ export const Trending = () => {
     .then((res)=> { console.log('trending',res)})
 
   return (
-    <main>
+    <>
       <Slide />
-    </main>
+    </>
   )
 }

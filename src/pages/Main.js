@@ -1,12 +1,16 @@
 import React from 'react'
 
-import { Slide } from '../components/Slide'
+import { Manga } from '../components/Manga'
+import { Trending } from '../components/Trending'
+import { Unreleased } from '../components/Unreleased'
 
 export const Main = () => {
 
   return (
     <main>
-      <Slide />
+      <Trending />
+      <Unreleased />
+      <Manga />
     </main>
   )
 }

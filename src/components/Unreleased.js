@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Slide } from '../components/Slide'
+import { Slide } from './Slide'
 
 export const Unreleased = () => {
 
@@ -9,8 +9,8 @@ export const Unreleased = () => {
     .then((res)=> {console.log('unreleased',res)})
 
   return (
-    <main>
+    <>
       <Slide />
-    </main>
+    </>
   )
 }
