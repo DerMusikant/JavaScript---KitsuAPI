@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
+import { Card } from './Card'
+
 export const Slide = (props) => {
 
   const [slide, setSlide] = useState(null)
@@ -58,23 +60,21 @@ export const Slide = (props) => {
     return(
       props.data.map(
         (data) => {
+          console.log(data.attributes.description)
           return(
-          <div key={data.id}>
-            <div className='mx-3'>
-              {data.attributes.canonicalTitle}
-            </div>
-          </div>
+          <Card key={data.id} data={data}/>
         )
         }
       )
     )
   }
 
+
   return (
-    <div className='relative w-4/5'>
-      <div className='flex justify-self-center overflow-x-hidden'>
-        <div id={props.name} className='flex flex-nowrap'>
-          {dataList()}
+    <div className='justify-self-center relative w-5/6 m-3'>
+      <div className='overflow-x-hidden'>
+        <div id={props.name} className='flex'>
+            {dataList()}
         </div>
       </div>
       <button onClick={left} className='absolute right-full inset-y-0'>Prev</button>
