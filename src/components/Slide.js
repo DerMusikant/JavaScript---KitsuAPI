@@ -51,7 +51,7 @@ export const Slide = (props) => {
 
   //Set the slide on component mount.
   useEffect(() => {
-    setSlide(document.querySelector('#slide'))
+    setSlide(document.querySelector(`#${props.name}`))
   }, [])
 
   const dataList = () => {
@@ -73,7 +73,7 @@ export const Slide = (props) => {
   return (
     <div className='relative w-4/5'>
       <div className='flex justify-self-center overflow-x-hidden'>
-        <div id='slide' className='flex flex-nowrap'>
+        <div id={props.name} className='flex flex-nowrap'>
           {dataList()}
         </div>
       </div>

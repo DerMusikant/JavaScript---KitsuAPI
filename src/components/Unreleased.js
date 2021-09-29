@@ -17,7 +17,7 @@ export const Unreleased = () => {
 
   return (
     <>
-      {fetching ? 'cargando': <Slide data={unreleased}/>}
+      {fetching ? 'cargando': <Slide data={unreleased} name='unreleased'/>}
     </>
   )
 }

@@ -18,7 +18,7 @@ export const Trending = () => {
 
   return (
     <>
-      {fetching ? 'cargando': <Slide data={trend}/>}
+      {fetching ? 'cargando': <Slide data={trend} name='trending'/>}
     </>
   )
 }

@@ -18,7 +18,7 @@ export const Manga = () => {
 
   return (
     <>
-      {fetching ? 'cargando': <Slide data={manga}/>}
+      {fetching ? 'cargando': <Slide data={manga} name='manga'/>}
     </>
   )
 }
