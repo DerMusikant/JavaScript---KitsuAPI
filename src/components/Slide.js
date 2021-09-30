@@ -11,7 +11,6 @@ export const Slide = (props) => {
     //return styles to normal after transition ends
     const transition = () => {
       slide.classList.remove('transition')
-      slide.removeEventListener('transitionend', transition)
     }
 
     const lastElement = slide.children[slide.children.length - 1]
@@ -25,7 +24,7 @@ export const Slide = (props) => {
       //Transition start
       slide.classList.add('transition')
       slide.removeAttribute('style')
-      slide.addEventListener('transitionend', transition)
+      setTimeout(transition, 1000)
     },0)
   }
 
@@ -36,7 +35,6 @@ export const Slide = (props) => {
       slide.classList.remove('transition')
       slide.removeAttribute('style')
       slide.appendChild(firstElement)
-      slide.removeEventListener('transitionend', transition)
     }
 
     const firstElement = slide.children[0]
@@ -47,7 +45,7 @@ export const Slide = (props) => {
 
 
 
-    slide.addEventListener('transitionend', transition)
+    setTimeout(transition, 1000)
   }
 
 
@@ -57,12 +55,14 @@ export const Slide = (props) => {
   }, [])
 
   const dataList = () => {
+
+    console.log(props.data)
+
     return(
       props.data.map(
         (data) => {
-          console.log(data.attributes.description)
           return(
-          <Card key={data.id} data={data}/>
+          <Card key={data.id} data={data} id={data.id}/>
         )
         }
       )
@@ -71,14 +71,14 @@ export const Slide = (props) => {
 
 
   return (
-    <div className='justify-self-center relative w-5/6 m-3'>
-      <div className='overflow-x-hidden'>
-        <div id={props.name} className='flex'>
+    <div className='flex justify-center justify-self-center'>
+      <button onClick={left} className='button w-1/12 h-full'>Prev</button>
+      <div className='slide w-10/12'>
+        <div id={props.name} className='container flex items-center'>
             {dataList()}
         </div>
       </div>
-      <button onClick={left} className='absolute right-full inset-y-0'>Prev</button>
-      <button onClick={right} className='absolute left-full inset-y-0'>Next</button>
+      <button onClick={right} className='button w-1/12 h-full'>Next</button>
     </div>
   )
 }
