@@ -36,7 +36,7 @@ export const Card = (props) => {
   }, [])
 
   return(
-  <div onMouseEnter={ handleEnter } onMouseLeave={ handleLeave } className='card transition text-center p-3'>
+  <div onMouseEnter={ handleEnter } onMouseLeave={ handleLeave } >
     <div className='flex items-center justify-around w-full h-full  bg-red-300 rounded-xl m-2'>
       <img src={props.data.attributes.posterImage.small} alt='' />
       <div className='flex flex-col justify-between'>

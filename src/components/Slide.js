@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import { Card } from './Card'
 
@@ -56,13 +57,15 @@ export const Slide = (props) => {
 
   const dataList = () => {
 
-    console.log(props.data)
-
     return(
       props.data.map(
         (data) => {
           return(
-          <Card key={data.id} data={data} id={data.id}/>
+          <div key={data.id} className='card transition text-center p-3'>
+            <Link to={`${props.name=='manga'?'manga':'anime'}/${data.id}`}>
+              <Card data={data} id={data.id}/>
+            </Link>
+          </div>
         )
         }
       )

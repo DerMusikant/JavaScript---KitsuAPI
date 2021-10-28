@@ -42,7 +42,7 @@ img{
 }
 
 .card:nth-child(n+3):hover{
-  transform: translate(-15%) scale(1.3);
+  transform: translate(-20%) scale(1.3);
 }
 
 .card:hover > div{
